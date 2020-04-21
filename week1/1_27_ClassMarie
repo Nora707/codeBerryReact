@@ -1,0 +1,27 @@
+// Write your code here.
+class Person extends React.Component{
+render(){
+  return (
+    <React.Fragment>
+  	<p>    Hi, my name is {this.props.name}.</p>
+       <p> Here are some facts about me:
+            - I was born on {this.props.month} {this.props.day}, {this.props.year}.
+            - I spent my childhood in {this.props.country} but then moved to {this.props.home} and lived most of my life there.
+            - I'm most proud of my discovery of the phenomenon called {this.props.discovery}, for which I've received a Nobel prize with my husband, Pierre and my friend, Henri.
+    </p>
+        </React.Fragment>
+  );
+}
+}
+class Introduction extends React.Component{
+  render(){
+    return (
+    	<React.Fragment>
+        <h1>Meet a famous scientist</h1>
+ <Person name="Marie Curie" month="11" day="17" year="1867" country="Poland" home="Paris" discovery="radioactivity"/>
+     
+       </React.Fragment>
+    );
+  }
+}
+ReactDOM.render(<Introduction/>, document.getElementById('root'));
