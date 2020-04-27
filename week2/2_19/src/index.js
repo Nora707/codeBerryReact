@@ -5,7 +5,19 @@ import '../src/index.css';
 class FormComp extends React.Component {
 	constructor(props){
 		super(props);
-		
+		this.state= {name:""};
+	}
+	
+	onNameChange=(event)=>{
+		let copyState= {...this.state};
+		copyState= event.target.value;
+		this.setState({name:copyState});
+	}
+	
+	nameSubmit=(event)=>{
+		event.preventDefault();
+		alert("We are submitting");
+		console.log("submit");
 	}
 	
 	render(){
@@ -14,15 +26,18 @@ class FormComp extends React.Component {
 				<div className="container">
 					<div className="form-input">
 						<h1>Form</h1>
-						<form>
+						 <form onSubmit={this.nameSubmit}>
 							<label>
 								Name: 
-								<input type="text" label="Name"></input>
+								<input type="text" onChange={this.onNameChange}></input>
 							</label>
+							<input type='submit'/>
 						</form>
+	
 					</div>
 					<div className="form-output">
 						<h1>Output</h1>
+						<p> {this.state.name}</p>
 					</div> 
 				</div>
 			
