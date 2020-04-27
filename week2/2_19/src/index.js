@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../src/index.css';
-const initialState= {name:""};
+const initialState= {name:"",
+age:0,
+food:"",
+pet:false};
 class FormComp extends React.Component {
 	
 	constructor(props){
@@ -9,10 +12,11 @@ class FormComp extends React.Component {
 		this.state= initialState;
 	}
 	
-	onNameChange=(event)=>{
+	onFormChange=(event)=>{
 		let copyState= {...this.state};
 		copyState= event.target.value;
-		this.setState({name:copyState});
+		const name = event.target.name;
+		this.setState({[name]:copyState});
 	}
 	
 	nameSubmit=(event)=>{
@@ -32,7 +36,19 @@ class FormComp extends React.Component {
 						 <form onSubmit={this.nameSubmit}>
 							<label>
 								Name: 
-								<input type="text" onChange={this.onNameChange}></input>
+								<input name="name" type="text" onChange={this.onFormChange}></input>
+							</label>
+								<label>
+								Age: 
+								<input name="age" type="text" onChange={this.onFormChange}></input>
+							</label>
+								<label>
+								Favorite food: 
+								<input name="food" type="text" onChange={this.onFormChange}></input>
+							</label>
+								<label>
+								Has pet: 
+								<input name="pet" type="radio" onChange={this.onFormChange}></input>
 							</label>
 							<input type='submit'/>
 						</form>
@@ -40,7 +56,10 @@ class FormComp extends React.Component {
 					</div>
 					<div className="form-output">
 						<h1>Output</h1>
-						<p> {this.state.name}</p>
+						<p>Name:  {this.state.name}</p>
+						<p>Age:  {this.state.age}</p>
+						<p>Favorite food: {this.state.food}</p>
+						<p>Has pet:  {this.state.pet}</p>
 					</div> 
 				</div>
 			
