@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../src/index.css';
-
+const initialState= {name:""};
 class FormComp extends React.Component {
+	
 	constructor(props){
 		super(props);
-		this.state= {name:""};
+		this.state= initialState;
 	}
 	
 	onNameChange=(event)=>{
@@ -18,6 +19,8 @@ class FormComp extends React.Component {
 		event.preventDefault();
 		alert("We are submitting");
 		console.log("submit");
+		event.currentTarget.reset();
+		this.setState(initialState);
 	}
 	
 	render(){
