@@ -6,15 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import GamePicker from './components/GamePicker';
 
 
-class StorePicker extends React.Component{
+class HomePage extends React.Component{
 	render(){
-		return <p>Heloo</p>
+		return <GamePicker/>
 	}
 }
 
 ReactDOM.render(
   <React.StrictMode>
-    <StorePicker />
+    <HomePage />
   </React.StrictMode>,
   document.getElementById('root')
 );

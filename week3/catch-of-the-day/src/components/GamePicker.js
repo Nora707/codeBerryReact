@@ -4,7 +4,13 @@ import ReactDOM from 'react-dom';
 
 class GamePicker extends React.Component{
 	render(){
-		return <p>Heloo</p>
+		return (
+			<form className="selector">
+				<h2>Please enter a game</h2>
+				<input type="text" required placeholder="type the name"></input>
+				<button type="submit">Visit game </button>
+			</form>
+		)
 	}
 }
  export default GamePicker;
