@@ -3,20 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import GamePicker from './components/GamePicker';
+import "./css/style.css";
 
-
-class HomePage extends React.Component{
-	render(){
-		return <GamePicker/>
-	}
+class HomePage extends React.Component {
+    render() {
+        return <App/>
+    }
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <HomePage />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <HomePage/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

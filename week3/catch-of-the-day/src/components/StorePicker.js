@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-class GamePicker extends React.Component{
+class StorePicker extends React.Component{
 	render(){
 		return (
 			<form className="selector">
@@ -13,4 +13,4 @@ class GamePicker extends React.Component{
 		)
 	}
 }
- export default GamePicker;
+ export default StorePicker;
