@@ -13,22 +13,29 @@ class App extends React.Component {
     };
 
     addFish = fish => {
-        const fishes =this.state.fishes;
+        const fishes = this.state.fishes;
         fishes.push(fish);
         this.setState({fishes});
     };
-
+    addToOrder = (key) => {
+        const order = {...this.state.order};
+        order[key] = order[key] + 1 || 1;
+        this.setState({order});
+    };
     loadSamples = () => {
         this.setState({fishes: [...sampleFishes]});
     };
-    // getFishes= Array.from(this.state.fishes);
+
     render() {
         return (
             <div className="catch-of-the-day">
                 <div className="menu">
                     <Header tagline="Fresh seafood market"/>
                     <ul className="fishes">
-                        {this.state.fishes.map(fish=><Fish key={fish.name} fish={fish}/>)}
+                        {this.state.fishes.map(fish => <Fish
+                            key={fish.name}
+                            index={fish.name}
+                            fish={fish} addToOrder={this.addToOrder}/>)}
                     </ul>
                 </div>
                 <Order/>
