@@ -10,7 +10,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "autoprefixer-stylus": "0.14.0",
-    "firebase": "^7.6.0",
+    "firebase": "^10.9.0",
     "prop-types": "^15.6.0",
     "re-base": "4.0.0",
     "react-router-dom": "^4.2.2",
